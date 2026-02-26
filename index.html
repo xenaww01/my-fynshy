@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nayaka | The Love Architecture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Playfair+Display:italic,wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050203; color: #ffffff; overflow-x: hidden; }
+        .serif { font-family: 'Playfair Display', serif; }
+        
+        /* GRID & VIGNETTE */
+        .bg-tech-grid { 
+            background-image: linear-gradient(rgba(255, 20, 147, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 20, 147, 0.05) 1px, transparent 1px); 
+            background-size: 40px 40px; background-attachment: fixed; 
+        }
+        .vignette { pointer-events: none; position: fixed; inset: 0; background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.9) 100%); z-index: 5; }
+        
+        /* TEXT STROKE EFFECT */
+        .outline-text { color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1); font-weight: 900; letter-spacing: -5px; }
+        
+        /* IMAGE STYLING */
+        .photo-frame { position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1); }
+        .photo-frame:hover { border-color: #ff1493; transform: translateY(-10px); box-shadow: 0 20px 40px rgba(255, 20, 147, 0.2); }
+        .photo-frame img { transition: transform 1.5s ease; width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) brightness(70%); }
+        .photo-frame:hover img { transform: scale(1.1); filter: grayscale(0%) brightness(100%); }
+
+        /* SCROLLBAR */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-thumb { background: #ff1493; }
+        
+        .section-num { font-size: 15vw; color: rgba(255, 20, 147, 0.02); position: absolute; top: -5%; left: 0; font-weight: 900; line-height: 1; pointer-events: none; }
+    </style>
+</head>
+<body class="bg-tech-grid">
+
+    <div class="vignette"></div>
+
+    <header class="fixed top-10 w-full z-[100] flex justify-center pointer-events-none">
+        <nav class="pointer-events-auto flex gap-8 text-[10px] uppercase tracking-[0.4em] font-bold text-gray-400 bg-black/60 backdrop-blur-2xl px-12 py-5 rounded-full border border-white/5 shadow-2xl">
+            <a href="#hero" class="hover:text-pink-500 transition-colors">first intro</a>
+            <a href="#philosophy" class="hover:text-pink-500 transition-colors">bersamanya</a>
+            <a href="#moments" class="hover:text-pink-500 transition-colors">picture</a>
+            <a href="#future" class="hover:text-pink-500 transition-colors">future</a>
+            <a href="#vow" class="hover:text-pink-500 transition-colors">surat</a>
+        </nav>
+    </header>
+
+    <section id="hero" class="min-h-screen relative flex flex-col items-center justify-center pt-20 overflow-hidden z-10">
+        <div class="absolute outline-text text-[15rem] sm:text-[25rem] whitespace-nowrap opacity-20">NAYAKA ALFINO</div>
+        
+        <div class="z-20 text-center px-6">
+            <p class="text-pink-500 font-bold tracking-[1em] text-[10px] mb-8 uppercase reveal italic">// High Level Devotion System</p>
+            <h1 id="dynamic-name" class="text-6xl sm:text-9xl font-black uppercase tracking-tighter leading-[0.85] text-white mb-16">
+                LOVING YOU <br> <span class="text-pink-600 serif italic">BY DEFAULT.</span>
+            </h1>
+
+            <div class="relative group w-[300px] h-[400px] sm:w-[500px] sm:h-[650px] mx-auto photo-frame rounded-sm">
+                <img src="foto parkiran.jpeg" alt="With her" class="reveal-img">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+                <div class="absolute bottom-10 left-0 w-full text-center">
+                    <p class="text-xs tracking-[0.5em] text-pink-500 font-bold uppercase italic">Principal variable of my life</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="philosophy" class="min-h-screen py-40 px-6 lg:px-32 relative z-10 border-t border-white/5">
+        <div class="section-num">01</div>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div class="reveal-text">
+                <span class="text-pink-500 font-bold tracking-widest text-xs uppercase mb-6 block">We built this together its ours.</span>
+                <h2 class="text-5xl sm:text-7xl font-black uppercase mb-10 leading-none">you and me <br> againts <span class="text-pink-600 italic serif">the world.</span></h2>
+                <div class="space-y-8 text-gray-400 text-lg leading-relaxed text-justify">
+                    <p>
+                        aku gatau gimana cara ngucapin terima kasih tapi aku <span class="text-white italic">sangat senang</span> kamu masuk ke hidupku karena kamu membuat semuanya jadi lebih baik lagi dari sebelumnya
+                    </p>
+                    <p class="text-white font-semibold italic border-l-4 border-pink-600 pl-8 bg-white/5 py-6">
+                        selama aku masih ada disini kamu akan selalu mempunyai orang yang selalu mencintaimu.
+                    </p>
+                    <p>
+                        iya aku memang tidak sekeren pria diluar sana tapi tolong tunggu proses ku buat jadi <span class="text-white">enginner itu ya..</span>
+                    </p>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 reveal-img">
+                <div class="photo-frame h-80 rotate-2"><img src="pose love.jpeg"></div>
+                <div class="photo-frame h-80 -rotate-3 mt-12"><img src="foto parkiran.jpeg"></div>
+                <div class="photo-frame h-80 -rotate-1"><img src="gandeng di parkiran.jpeg"></div>
+                <div class="photo-frame h-80 rotate-6 mt-12"><img src="pose cute.jpeg"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="moments" class="min-h-screen py-40 px-6 lg:px-32 bg-white/[0.01]">
+        <div class="section-num text-right right-0 left-auto">02</div>
+        <div class="text-center mb-32">
+            <h2 class="text-6xl font-black uppercase mb-4">Kimbelyn <span class="text-pink-600 italic serif">sent me this</span></h2>
+            <p class="text-gray-500 tracking-[0.4em] text-[10px] uppercase italic">from Kimberlyn</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="md:col-span-2 h-[500px] photo-frame reveal-img">
+                <img src="16.9.jpeg">
+                <div class="absolute top-6 left-6 bg-black/50 backdrop-blur-md px-4 py-2 text-[10px] tracking-widest">First Pict</div>
+            </div>
+            <div class="h-[500px] photo-frame reveal-img delay-100">
+                <img src="foto efek manyun.jpeg">
+                <div class="absolute top-6 left-6 bg-black/50 backdrop-blur-md px-4 py-2 text-[10px] tracking-widest">Second pict</div>
+            </div>
+            <div class="h-[500px] photo-frame reveal-img delay-200">
+                <img src="eyin frame4.jpeg">
+                <div class="absolute top-6 left-6 bg-black/50 backdrop-blur-md px-4 py-2 text-[10px] tracking-widest">Third Pict</div>
+            </div>
+            <div class="h-[400px] photo-frame reveal-img">
+                <img src="eyin mata kiri.jpeg">
+            </div>
+            <div class="md:col-span-2 h-[400px] photo-frame reveal-img delay-100">
+                <img src="pmr.jpeg">
+            </div>
+            <div class="h-[400px] photo-frame reveal-img delay-200">
+                <img src="foto pose 2jari.jpeg">
+            </div>
+        </div>
+    </section>
+
+    <section id="future" class="min-h-screen py-40 px-6 lg:px-32 border-t border-white/5 relative overflow-hidden">
+        <div class="section-num">03</div>
+        <div class="max-w-4xl mx-auto text-center mb-32 reveal-text">
+            <h2 class="text-5xl sm:text-7xl font-black uppercase mb-8">Future <span class="text-pink-600">Plans</span></h2>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
+                akuu dann diaa sedang membangun masa depan dan saling berproses satu sama lain <span class="text-white italic">aku sebagai enginner dan dia sebagai dokter</span> aku harap kami bisa melewati masa masa ini dan sukses bersama.
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+            <div class="space-y-16 reveal-text">
+                <div class="flex gap-8 group">
+                    <div class="text-4xl font-black text-pink-900 group-hover:text-pink-600 transition-colors italic">A</div>
+                    <div>
+                        <h4 class="text-2xl font-bold uppercase mb-4 text-white">Vino plans</h4>
+                        <p class="text-gray-500 leading-relaxed">aku mempunyai plan sesudah aku menyelesaikan pendidikan di indonesia ini aku akan terbang ke jepang untuk mencari kerja disana dengan profesi yaitu enginner.</p>
+                    </div>
+                </div>
+                <div class="flex gap-8 group">
+                    <div class="text-4xl font-black text-pink-900 group-hover:text-pink-600 transition-colors italic">B</div>
+                    <div>
+                        <h4 class="text-2xl font-bold uppercase mb-4 text-white">Kimberlyn plans</h4>
+                        <p class="text-gray-500 leading-relaxed">aku juga mempunyai plan sesudah aku menyelesaikan pendidikan saya ingin mendapatkan gelar sebagai dokter.</p>
+                    </div>
+                </div>
+                <div class="flex gap-8 group">
+                    <div class="text-4xl font-black text-pink-900 group-hover:text-pink-600 transition-colors italic">C</div>
+                    <div>
+                        <h4 class="text-2xl font-bold uppercase mb-4 text-white">for us</h4>
+                        <p class="text-gray-500 leading-relaxed">kami berharap kami akan bersama dan saling menemani proses satu sama lain dan kami ingin menikmati hidup dengan keliling <span class="text-white italic">dunia</span> one day.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative reveal-img">
+                <img src="gandeng di parkiran.jpeg" class="w-full h-[600px] object-cover border border-white/10 grayscale opacity-40 hover:opacity-100 hover:grayscale-0 transition-all duration-1000">
+                <div class="absolute -bottom-10 -left-10 bg-pink-600 p-10 hidden lg:block">
+                    <p class="text-2xl font-black italic">one day</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="vow" class="min-h-screen py-40 px-6 flex items-center justify-center bg-black relative">
+        <div class="absolute inset-0 bg-[#ff1493] opacity-5 blur-[150px] animate-pulse"></div>
+        <div class="max-w-5xl w-full border border-pink-500/20 bg-white/[0.02] p-12 sm:p-32 text-center backdrop-blur-3xl reveal-text">
+            <span class="text-pink-600 font-bold tracking-[1em] text-[10px] uppercase mb-16 block italic">Pesan Dari Kami</span>
+            <h2 class="text-5xl sm:text-8xl font-black uppercase mb-16 tracking-tighter leading-none">Terima kasih <br> Telah <span class="text-pink-600 italic serif">Mengunjungi Website kami</span></h2>
+            
+            <div class="space-y-12 text-2xl sm:text-4xl font-light italic text-gray-300 leading-tight">
+                <p>"Jika hidup adalah sebuah program, kamu adalah satu-satunya fungsi yang memberikan nilai balik berupa kebahagiaan."</p>
+                <p>"“Kalau begitu, biarkan aku jadi jantung dari sistemmu—yang terus berdetak memastikan hidupmu berjalan tanpa error.”"</p>
+            </div>
+
+            <div class="mt-24">
+                <div class="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-transparent mb-12"></div>
+                <p class="text-pink-600 font-black text-4xl sm:text-6xl tracking-[0.2em] uppercase">thanks for visit</p>
+                <p class="text-gray-700 mt-10 text-[10px] tracking-[0.8em] uppercase italic"></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center border-t border-white/5 relative z-10 bg-[#050203]">
+        <p class="text-[10px] text-gray-600 uppercase tracking-[0.5em]"></p>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // HERO NAME ANIMATION
+        const names = ["love your smile", "thank youu", "trust me", "my safe place."];
+        let nameIdx = 0;
+        setInterval(() => {
+            gsap.to("#dynamic-name", { y: -20, opacity: 0, duration: 0.5, onComplete: () => {
+                nameIdx = (nameIdx + 1) % names.length;
+                document.getElementById("dynamic-name").innerHTML = names[nameIdx].replace(" ", "<br>");
+                gsap.fromTo("#dynamic-name", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.2 });
+            }});
+        }, 1200);
+
+        // SMOOTH REVEALS
+        gsap.utils.toArray('.reveal-text').forEach(el => {
+            gsap.from(el, { y: 100, opacity: 0, duration: 1.5, ease: "power4.out", scrollTrigger: { trigger: el, start: "top 85%" } });
+        });
+
+        gsap.utils.toArray('.reveal-img').forEach(el => {
+            gsap.from(el, { scale: 1.1, opacity: 0, duration: 2, ease: "expo.out", scrollTrigger: { trigger: el, start: "top 80%" } });
+        });
+
+        // PARALLAX EFFECT FOR BACKGROUND TEXT
+        gsap.to(".outline-text", {
+            xPercent: -50,
+            scrollTrigger: {
+                trigger: "#hero",
+                start: "top top",
+                end: "bottom top",
+                scrub: 2
+            }
+        });
+    </script>
+</body>
+</html>
